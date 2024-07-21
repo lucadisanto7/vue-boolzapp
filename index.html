@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boolzapp con Vue</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="app">
         <div class="sidebar">
+            <input type="text" placeholder="Search or start new chat" class="search-bar">
             <div class="contact" 
                  v-for="(contact, index) in contacts" 
                  :key="contact.name"
@@ -27,7 +28,7 @@
             </div>
             <div class="messages" v-if="activeContact">
                 <div v-for="message in activeContact.messages" :class="['message', message.status]">
-                    {{ message.message }}
+                    <div class="message-text">{{ message.message }}</div>
                     <div class="timestamp">{{ message.date }}</div>
                 </div>
             </div>
