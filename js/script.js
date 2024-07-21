@@ -3,6 +3,10 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
+            user:{
+                name: 'Sofia',
+                avatar: './img/avatar_io.jpg'
+            },
             contacts: [
                 {
                 name: 'Michele',
@@ -166,23 +170,28 @@ createApp({
                 ],
                 }
                 ],
-            newMessage: '',
-            activeContact: null
-        }
-    },
-    methods: {
-        addMessage() {
-            if (this.newMessage.trim() !== '') {
-                this.activeContact.messages.push({ 
-                    message: this.newMessage, 
-                    status: 'sent', 
-                    date: new Date().toLocaleString() 
-                });
-                this.newMessage = '';
+                activeContactIndex: null,
+                newMessage: ''
             }
         },
-        selectContact(index) {
-            this.activeContact = this.contacts[index];
+        computed: {
+            activeContact() {
+                return this.contacts[this.activeContactIndex];
+            }
+        },
+        methods: {
+            selectContact(index) {
+                this.activeContactIndex = index;
+            },
+            addMessage() {
+                if (this.newMessage.trim() !== '' && this.activeContact) {
+                    this.activeContact.messages.push({
+                        date: new Date().toLocaleString(),
+                        message: this.newMessage,
+                        status: 'sent'
+                    });
+                    this.newMessage = '';
+                }
+            }
         }
-    }
-}).mount('#app');
+    }).mount('#app');
