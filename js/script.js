@@ -191,6 +191,13 @@ createApp({
                         status: 'sent'
                     });
                     this.newMessage = '';
+                    setTimeout(() => {
+                        this.activeContact.messages.push({
+                            date: new Date().toLocaleString(),
+                            message: 'ok',
+                            status: 'received'
+                        });
+                    }, 1000);
                 }
             }
         }
