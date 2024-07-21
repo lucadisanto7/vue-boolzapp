@@ -169,10 +169,8 @@ body {
 }
 
 .notification-bar {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 10px;
+    background-color: #8dd7fb;
+    padding: 30px;
     font-size: 14px;
 }
 
@@ -186,4 +184,9 @@ body {
 
 .contact.active {
     background-color: #e0e0e0;
+}
+.desktop{
+    display: block;
+    margin-top: 5px;
+    color: grey;
 }
