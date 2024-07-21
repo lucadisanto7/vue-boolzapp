@@ -26,12 +26,12 @@
                     <a class="desktop" href="">Attiva notifiche desktop</a>
                 </div>
             </div>
-            <input type="text" placeholder="Search or start new chat" class="search-bar">
+            <input type="text" placeholder="Search or start new chat" class="search-bar" v-model="searchQuery">
             <div class="contact" 
-                 v-for="(contact, index) in contacts" 
-                 :key="contact.name"
-                 @click="selectContact(index)"
-                 :class="{ active: activeContactIndex === index }">
+            v-for="(contact, index) in filteredContacts" 
+            :key="contact.name"
+            @click="selectContact(index)"
+            :class="{ active: activeContactIndex === index }">       
                 <img :src="contact.avatar" alt="avatar">
                 <div class="contact-info">
                     <div class="name">{{ contact.name }}</div>
@@ -66,6 +66,6 @@
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js" type="text/javascript"></script>
-    
+
 </body>
 </html>

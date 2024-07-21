@@ -171,12 +171,18 @@ createApp({
                 }
                 ],
                 activeContactIndex: null,
-                newMessage: ''
+                newMessage: '',
+                searchQuery: ""
             }
         },
         computed: {
             activeContact() {
                 return this.contacts[this.activeContactIndex];
+            },
+            filteredContacts() {
+                return this.contacts.filter(contact => 
+                    contact.name.toLowerCase().includes(this.searchQuery.toLowerCase())
+                );
             }
         },
         methods: {
