@@ -39,3 +39,12 @@ createApp({
             newMessage: ''
         }
     },
+    methods: {
+        addMessage() {
+            if (this.newMessage.trim() !== '') {
+                this.messages.push({ message: this.newMessage, status: 'sent' });
+                this.newMessage = '';
+            }
+        }
+    }
+}).mount('#app');
