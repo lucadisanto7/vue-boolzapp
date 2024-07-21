@@ -9,22 +9,35 @@
 <body>
     <div id="app">
         <div class="sidebar">
-            <div class="contact" v-for="contact in contacts" :key="contact.name">
-                <img :src="contact.avatar" alt="avatar" width="50">
-                <p>{{ contact.name }}</p>
-            </div>
-        </div>
-        <div class="chat">
-            <div class="messages">
-                <div v-for="message in messages" :class="['message', message.status]">
-                    {{ message.message }}
+            <div class="contact" 
+                 v-for="(contact, index) in contacts" 
+                 :key="contact.name"
+                 @click="selectContact(index)">
+                <img :src="contact.avatar" alt="avatar">
+                <div class="contact-info">
+                    <div class="name">{{ contact.name }}</div>
+                    <div class="last-message">{{ contact.messages[contact.messages.length - 1].message }}</div>
                 </div>
             </div>
         </div>
-        <div class="input">
-            <input type="text" v-model="newMessage" @keyup.enter="addMessage" placeholder="Scrivi un messaggio...">
+        <div class="chat">
+            <div class="chat-header" v-if="activeContact">
+                <img :src="activeContact.avatar" alt="avatar">
+                <div class="contact-name">{{ activeContact.name }}</div>
+            </div>
+            <div class="messages" v-if="activeContact">
+                <div v-for="message in activeContact.messages" :class="['message', message.status]">
+                    {{ message.message }}
+                    <div class="timestamp">{{ message.date }}</div>
+                </div>
+            </div>
+            <div class="input" v-if="activeContact">
+                <input type="text" v-model="newMessage" @keyup.enter="addMessage" placeholder="Scrivi un messaggio...">
+                <button @click="addMessage">Invia</button>
+            </div>
         </div>
     </div>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js" type="text/javascript"></script>
 </body>
