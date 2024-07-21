@@ -155,7 +155,6 @@ body {
     display: flex;
     align-items: center;
     padding: 15px;
-    border-bottom: 1px solid #34495e;
 }
 .user-profile img {
     width: 50px;
