@@ -70,7 +70,7 @@ body {
 }
 .chat-header {
     padding: 15px;
-    background-color: #ededed;
+    background-color: #e7e7e6;
     border-bottom: 1px solid #ddd;
     display: flex;
     align-items: center;
@@ -154,6 +154,7 @@ body {
     display: flex;
     align-items: center;
     padding: 15px;
+    background-color: #e7e7e6;
 }
 .user-profile img {
     width: 50px;
@@ -205,6 +206,22 @@ body {
 }
 .smile, .mic{
     margin: 0px 20px;
+    font-size: 25px;
+    color: grey;
+}
+.icon-container{
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    right: 40px;
+    font-size: 25px;
+    color: grey;
+}
+.icon-container-user{
+    display: flex;
+    gap: 25px;
+    position: absolute;
+    right: 71%;
     font-size: 25px;
     color: grey;
 }

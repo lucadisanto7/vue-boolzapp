@@ -13,6 +13,11 @@
             <div class="user-profile">
                 <img :src="user.avatar" alt="avatar">
                 <div class="user-name">{{ user.name }}</div>
+                <div class="icon-container-user">
+                    <i class="fa-regular fa-circle"></i>
+                    <i class="fa-solid fa-message"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>         
             </div>
             <div class="notification-bar">
                 <i class="fa-solid fa-bell-slash bell"></i>
@@ -38,6 +43,11 @@
             <div class="chat-header">
                 <img :src="activeContact.avatar" alt="avatar">
                 <div class="contact-name">{{ activeContact.name }}</div>
+                <div class="icon-container">
+                    <i class="fa-solid fa-magnifying-glass glass"></i>
+                    <i class="fa-solid fa-paperclip paperclip"></i>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>         
             </div>
             <div class="messages">
                 <div v-for="message in activeContact.messages" :class="['message', message.status]">
