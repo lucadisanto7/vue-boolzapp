@@ -170,7 +170,7 @@ body {
 
 .notification-bar {
     background-color: #8dd7fb;
-    padding: 30px;
+    padding: 20px;
     font-size: 14px;
 }
 
@@ -189,4 +189,19 @@ body {
     display: block;
     margin-top: 5px;
     color: grey;
+}
+.bell{
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 95px;
+    margin-left: 10px;
+    font-size: 25px;
+    color: #8dd7fb;
+    background-color: white;
+    padding: 13px 10px;
+    border-radius: 100px;
+}
+.new-mex{
+    margin-left: 60px;
 }
