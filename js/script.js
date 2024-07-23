@@ -170,7 +170,7 @@ createApp({
                 ],
                 }
                 ],
-                activeContactIndex: null,
+                activeContactIndex: 0,
                 newMessage: '',
                 searchQuery: ""
             }
