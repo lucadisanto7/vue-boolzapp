@@ -205,7 +205,16 @@ createApp({
                         });
                     }, 1000);
                 }
+            },
+            deleteMessage(contactIndex, messageIndex) {
+                this.contacts[contactIndex].messages.splice(messageIndex, 1);
+            },
+            getLastMessageDate(contact) {
+                if (contact.messages.length > 0) {
+                    return contact.messages[contact.messages.length - 1].date;
+                }
+                return '';
             }
         }
- 
+        
     }).mount('#app');
